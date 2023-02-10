@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="loginStyles.css">
+    <meta charset="UTF-8" />
+    <title>Login Page</title>
+  </head>
+  <script>
+    function validateform() {
+      var name = document.getElementById("username");
+      var password = document.getElementById("password");
+
+      if (name.value == null || name.value == "") {
+        alert("name can't be blank");
+        return false;
+      } else if (password.value == null || password.value == "") {
+        alert("password cannot be blank");
+        return false;
+      } else {
+        if (password.value.length < 6) {
+          alert("password must contain more characters");
+          return false;
+        }
+        return true;
+      }
+    }
+  </script>
+  <body>
+    <h1 align="center">Login here</h1>
+    <form class="login" action="/Project_3/preview.html" onsubmit="return validateform()">
+      <table style="width: 20%" align="center">
+        <tr>
+          <td>UserName</td>
+          <td><input type="text" id="username" name="username" /></td>
+          <label id="1"></label>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><input type="password" id="password" name="password" /></td>
+        </tr>
+      </table>
+      <input type="submit" value="submit" />
+    </form>
+  </body>
+</html>
